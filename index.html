@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clasificador EuroSAT</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+</head>
+<body>
+  <main class="contenedor">
+    <section class="tarjeta">
+      <p class="etiqueta">Clasificación de imágenes satelitales</p>
+      <h1>Clasificador EuroSAT</h1>
+      <p class="descripcion">
+        Sube una imagen satelital RGB y el modelo intentará clasificar el tipo de zona observada.
+      </p>
+
+      <div class="zona-carga">
+        <input type="file" id="entradaImagen" accept="image/*">
+        <img id="vistaPrevia" alt="Vista previa de la imagen">
+      </div>
+
+      <button id="botonPredecir" disabled>Clasificar imagen</button>
+
+      <div class="resultado">
+        <p id="estado">Cargando modelo...</p>
+        <h2 id="claseResultado">Sin predicción</h2>
+        <p id="confianzaResultado"></p>
+      </div>
+    </section>
+
+    <section class="info">
+      <h3>Clases del modelo</h3>
+      <p>
+        AnnualCrop, Forest, HerbaceousVegetation, Highway, Industrial,
+        Pasture, PermanentCrop, Residential, River y SeaLake.
+      </p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
